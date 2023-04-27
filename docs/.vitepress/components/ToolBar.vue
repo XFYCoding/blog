@@ -67,11 +67,11 @@
 }
 
 #tool .wx {
-  background-image: url("../../public/icon/wx.png");
+  background-image: url("../../public/img/icon/wx.png");
 }
 
 #tool .zs {
-  background-image: url("../../public/icon/red-heart.png");
+  background-image: url("../../public/img/icon/red-heart.png");
 }
 
 #tool .tooltext {
