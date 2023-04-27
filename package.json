@@ -1,0 +1,28 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "基于VitePress的个人微博",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    "deploy": "deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xfycoding/blogCode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xfycoding/blogCode.git"
+  },
+  "homepage": "https://github.com/xfycoding/blogCode#readme",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.65"
+  },
+  "dependencies": {
+    "element-plus": "^2.3.3"
+  }
+}

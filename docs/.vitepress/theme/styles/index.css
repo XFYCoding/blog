@@ -1,0 +1,12 @@
+.outline-link:hover,
+.outline-link.active {
+    color: var(--vp-c-brand) !important;
+}
+
+.edit-info {
+    justify-content: end !important;
+}
+
+.el-backtop {
+    --el-backtop-text-color: var(--vp-c-brand) !important;
+}

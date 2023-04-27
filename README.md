@@ -1,2 +1,3 @@
 # blog
-基于vitepress的个人博客
+基于VitePress的个人微博
+链接：https://xfycoding.github.io/blog/
