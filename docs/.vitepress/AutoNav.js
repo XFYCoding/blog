@@ -1,6 +1,43 @@
 const fs = require("fs");
 const path = require("path");
 
+const navConfigs = generateNavConfig();
+
+function generateNavConfig() {
+    const navConfig = [];
+    //获取articles路径
+    const docsPath = path.resolve(__dirname, "../articles");
+    //获取当前目录的文件
+    const files = fs.readdirSync(docsPath);
+    //排序
+    files.sort(function (a, b) {
+        return sortByNumber(a, b, "-");
+    });
+
+    files.forEach((filename) => {
+        //拼接路径
+        const filepath = path.join(docsPath, filename);
+        var finnalFileName = filename.split("-");
+        //状态
+        const stat = fs.statSync(filepath);
+        // 如果是文件夹，则递归生成子级 sidebar 配置
+        if (stat.isDirectory()) {
+            var items = generateItem(filepath);
+            var temp = {};
+            temp.text = finnalFileName[1];
+
+            if (items.length == 0 && filename.endsWith("~")) {
+                var link = findLink(filepath);
+                temp.text = finnalFileName[1].slice(0, -1);
+                temp.link = link;
+            } else {
+                temp.items = items;
+            }
+            navConfig.push(temp);
+        }
+    });
+    return navConfig;
+}
 
 function generateItem(itemPath) {
     const items = [];
@@ -70,38 +107,4 @@ function sortByNumber(obj1, obj2, separator) {
     return s1[0] - s2[0];
 }
 
-export default function generateNavConfig() {
-    const navConfig = [];
-    //获取articles路径
-    const docsPath = path.resolve(__dirname, "../articles");
-    //获取当前目录的文件
-    const files = fs.readdirSync(docsPath);
-    //排序
-    files.sort(function (a, b) {
-        return sortByNumber(a, b, "-");
-    });
-
-    files.forEach((filename) => {
-        //拼接路径
-        const filepath = path.join(docsPath, filename);
-        var finnalFileName = filename.split("-");
-        //状态
-        const stat = fs.statSync(filepath);
-        // 如果是文件夹，则递归生成子级 sidebar 配置
-        if (stat.isDirectory()) {
-            var items = generateItem(filepath);
-            var temp = {};
-            temp.text = finnalFileName[1];
-
-            if (items.length == 0 && filename.endsWith("~")) {
-                var link = findLink(filepath);
-                temp.text = finnalFileName[1].slice(0, -1);
-                temp.link = link;
-            } else {
-                temp.items = items;
-            }
-            navConfig.push(temp);
-        }
-    });
-    return navConfig;
-}
+export default navConfigs;

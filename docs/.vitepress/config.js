@@ -1,4 +1,4 @@
-import generateNavConfig from "./AutoNav"
+import navConfigs from "./AutoNav"
 import sidebarConfig from "./AutoSidebar"
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
         // 表示显示h2-h6的标题
         outline: 'deep',
         lastUpdatedText: 'Updated Date',
-        nav: generateNavConfig(),
+        nav: navConfigs,
         sidebar: sidebarConfig,
         socialLinks: [
             { icon: "github", link: "https://github.com/Xfycoding" }
