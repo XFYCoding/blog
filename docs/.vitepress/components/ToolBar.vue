@@ -37,7 +37,7 @@
 </template>
    
 <script>
-import { ElMessage } from 'element-plus'
+import { ElMessage } from "element-plus";
 export default {
   created() {
     this.$nextTick(() => {
@@ -45,21 +45,22 @@ export default {
       // document.oncontextmenu = new Function("event.returnValue=false");
       // // 禁用选择
       // document.onselectstart = new Function("event.returnValue=false");
-
-      // 3.禁止键盘F12键
-      document.addEventListener("keydown", function (e) {
-        if (e.key == "F12") {
-          e.preventDefault(); // 如果按下键F12,阻止事件
-        }
-      });
-
-      document.oncopy = function (e) {
-        e.preventDefault();
-        ElMessage({
-          message: "管理员已开启禁止复制功能，如有疑问，请联系管理员",
-          type: "warning",
+      if (typeof window !== "undefined") {
+        // 3.禁止键盘F12键
+        document.addEventListener("keydown", function (e) {
+          if (e.key == "F12") {
+            e.preventDefault(); // 如果按下键F12,阻止事件
+          }
         });
-      };
+
+        document.oncopy = function (e) {
+          e.preventDefault();
+          ElMessage({
+            message: "管理员已开启禁止复制功能，如有疑问，请联系管理员",
+            type: "warning",
+          });
+        };
+      }
     });
   },
 };
