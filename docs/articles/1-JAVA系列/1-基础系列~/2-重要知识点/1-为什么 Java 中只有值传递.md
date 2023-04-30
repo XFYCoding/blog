@@ -147,7 +147,7 @@ xiaoLi:小李
 看到这里，相信你已经知道了 Java 中只有值传递，是没有引用传递的。
 但是，引用传递到底长什么样呢？下面以 `C++` 的代码为例，让你看一下引用传递的庐山真面目。
 
-```C++
+```c
 #include <iostream>
 
 void incr(int& num)
@@ -167,7 +167,7 @@ int main()
 ```
 
 输出结果：
-```
+```c
 invoke before: 10
 incr before: 10
 incr after: 11

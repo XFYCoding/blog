@@ -1,4 +1,5 @@
 import { inBrowser } from 'vitepress';
+import { ElMessage } from "element-plus";
 export function useCopyCode() {
     if (inBrowser) {
         const timeoutIdMap = new Map();
@@ -32,6 +33,10 @@ export function useCopyCode() {
                         timeoutIdMap.delete(el);
                     }, 2000);
                     timeoutIdMap.set(el, timeoutId);
+                });
+                ElMessage({
+                    message: "复制成功",
+                    type: "success",
                 });
             }
         });

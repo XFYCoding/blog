@@ -6,7 +6,7 @@ import { h } from "vue";
 import ToolBar from "../components/ToolBar.vue";
 import BackTop from "../components/BackTop.vue";
 
-import { useCopyCode } from './composables/copyCode';
+import { useCopyCode } from '../composables/copyCode';
 
 
 export default {
