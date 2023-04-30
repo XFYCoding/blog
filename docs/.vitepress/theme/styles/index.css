@@ -10,3 +10,11 @@
 .el-backtop {
     --el-backtop-text-color: var(--vp-c-brand) !important;
 }
+
+.content{
+    -ms-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    /* -webkit-user-select: none !important; */
+    /* user-select: none; */
+}

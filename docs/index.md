@@ -24,21 +24,21 @@ features:
   - icon: 🖖
     title: 框架
     details: 有手就行
-    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-基于VitePress搭建个人博客
+    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-搭建个人博客
   - icon: 🛠️
     title: 数据库
     details: 数据库
-    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-基于VitePress搭建个人博客  
+    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-搭建个人博客
   - icon: 🪒
     title: 消息中间件
     details: 消息中间件
-    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-基于VitePress搭建个人博客
+    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-搭建个人博客
   - icon: 💯
     title: 算法
     details: 算法
-    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-基于VitePress搭建个人博客
+    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-搭建个人博客
   - icon: 📚 
     title: 项目实战
     details: 项目实战
-    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-基于VitePress搭建个人博客
+    link: /articles/6-项目实战~/1-基于VitePress搭建个人博客/1-搭建个人博客
 ---

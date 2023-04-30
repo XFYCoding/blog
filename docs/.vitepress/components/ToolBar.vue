@@ -1,7 +1,7 @@
 <template>
   <div id="toolcontainer">
     <div id="tool">
-      <el-popover placement="left-end" trigger="click">
+      <el-popover placement="left-end" trigger="hover">
         <p style="text-align: center">微信扫一扫</p>
         <img
           src="../../public/img/home/qrcode.png"
@@ -9,14 +9,14 @@
         />
         <template #reference>
           <div>
-            <label class="toolcontext wx"></label>
+            <img src="../../public/img/icon/wx.png" class="toolcontext" />
             <span class="tooltext">微信</span>
           </div>
         </template>
       </el-popover>
     </div>
     <div id="tool">
-      <el-popover placement="left-end" trigger="click">
+      <el-popover placement="left-end" trigger="hover">
         <p style="text-align: center">微信赞赏码</p>
         <img
           src="../../public/img/home/moneycode.png"
@@ -24,8 +24,11 @@
         />
         <template #reference>
           <div>
-            <label class="toolcontext zs"></label>
-            <span class="tooltext">支持我</span>
+            <img
+              src="../../public/img/icon/red-heart.png"
+              class="toolcontext"
+            />
+            <span class="tooltext">赞赏</span>
           </div>
         </template>
       </el-popover>
@@ -34,49 +37,62 @@
 </template>
    
 <script>
+import { ElMessage } from 'element-plus'
+export default {
+  created() {
+    this.$nextTick(() => {
+      // // 禁用右键
+      // document.oncontextmenu = new Function("event.returnValue=false");
+      // // 禁用选择
+      // document.onselectstart = new Function("event.returnValue=false");
+
+      // 3.禁止键盘F12键
+      document.addEventListener("keydown", function (e) {
+        if (e.key == "F12") {
+          e.preventDefault(); // 如果按下键F12,阻止事件
+        }
+      });
+
+      document.oncopy = function (e) {
+        e.preventDefault();
+        ElMessage({
+          message: "管理员已开启禁止复制功能，如有疑问，请联系管理员",
+          type: "warning",
+        });
+      };
+    });
+  },
+};
 </script>
    
 <style>
 #toolcontainer {
   position: fixed;
-  width: 44px;
   text-align: center;
-  right: 1%;
-  z-index: 999;
+  right: 10px;
+  z-index: 99;
 }
 #tool {
   position: relative;
-  width: 44px;
-  margin-top: 3px;
-  border-bottom: 1px solid var(--vp-c-brand);
+  width: 60px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+  padding-top: 8px;
 }
 
 #tool .toolcontext {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 45px 45px;
-  -webkit-animation: wobble 250ms infinite;
-  animation: wobble 250ms infinite;
-  align-items: center;
-  justify-content: center;
-}
-
-#tool .wx {
-  background-image: url("../../public/img/icon/wx.png");
-}
-
-#tool .zs {
-  background-image: url("../../public/img/icon/red-heart.png");
 }
 
 #tool .tooltext {
   color: grey;
-  margin-top: 3px;
   font-size: 11px;
 }
 
