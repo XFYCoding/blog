@@ -21,8 +21,8 @@ export function useCopyCode() {
                 if (isShell) {
                     text = text.replace(/^ *(\$|>) /gm, '').trim();
                 }
-                text = text + '\n' + '\n' + '\n' + "============================" + '\n';
-                text = text + "作者：xfycoding" + '\n' + "小肥瑜博客：https://xfycoding.github.io/blog/" + '\n' + "文章来源：" + sibling.baseURI + '\n';
+                text = text + '\n' + '\n' + '\n' + "==========" + '\n';
+                text = text + "作者：xfycoding" + '\n' + "博客链接：https://xfycoding.github.io/blog/" + '\n' + "文章来源：" + sibling.baseURI + '\n';
                 console.log(text);
                 copyToClipboard(text).then(() => {
                     el.classList.add('copied');
@@ -33,10 +33,10 @@ export function useCopyCode() {
                         timeoutIdMap.delete(el);
                     }, 2000);
                     timeoutIdMap.set(el, timeoutId);
-                });
-                ElMessage({
-                    message: "复制成功",
-                    type: "success",
+                    ElMessage({
+                        message: "复制成功",
+                        type: "success",
+                    });
                 });
             }
         });

@@ -8,7 +8,6 @@ import BackTop from "../components/BackTop.vue";
 
 import { useCopyCode } from '../composables/copyCode';
 
-
 export default {
   ...Theme,
   Layout() {
@@ -19,6 +18,7 @@ export default {
     });
   },
   enhanceApp: async ({ app, router, siteData }) => {
+    router.mode = "hash";
     app.use(elementplus);
   },
 };

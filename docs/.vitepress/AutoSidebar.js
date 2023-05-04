@@ -8,7 +8,7 @@ const sidebarConfig = generateSidebarConfig(docsPath, "/articles");
 function generateSidebarConfig(docsPath, link,sidebarConfig = {}) {
     const files = fs.readdirSync(docsPath);
 
-    if (link.endsWith("~")) {
+    if (link.endsWith("@")) {
         sidebarConfig[link] = generateSidebarDatas(docsPath, link);
         return;
     }

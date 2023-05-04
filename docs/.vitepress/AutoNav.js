@@ -26,7 +26,7 @@ function generateNavConfig() {
             var temp = {};
             temp.text = finnalFileName[1];
 
-            if (items.length == 0 && filename.endsWith("~")) {
+            if (items.length == 0 && filename.endsWith("@")) {
                 var link = findLink(filepath);
                 temp.text = finnalFileName[1].slice(0, -1);
                 temp.link = link;
@@ -54,7 +54,7 @@ function generateItem(itemPath) {
         //状态
         const stat = fs.statSync(filepath);
         // 如果是文件夹，则递归生成子级 sidebar 配置
-        if (stat.isDirectory() && filename.endsWith("~")) {
+        if (stat.isDirectory() && filename.endsWith("@")) {
             var link = findLink(filepath);
             items.push({
                 text: finnalFileName[1].slice(0, -1),
