@@ -18,7 +18,7 @@ export default {
     });
   },
   enhanceApp: async ({ app, router, siteData }) => {
-    router.mode = "hash";
+    // router.mode = "hash";
     app.use(elementplus);
   },
 };

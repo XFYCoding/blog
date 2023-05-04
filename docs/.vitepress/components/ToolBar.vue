@@ -1,8 +1,8 @@
 <template>
   <div id="toolcontainer">
     <div id="tool">
-      <template>
-        <el-popover placement="left-end" trigger="click">
+      <ClientOnly>
+        <el-popover placement="left-end">
           <p style="text-align: center">微信扫一扫</p>
           <img
             src="../../public/img/home/qrcode.png"
@@ -15,11 +15,11 @@
             </div>
           </template>
         </el-popover>
-      </template>
+      </ClientOnly>
     </div>
     <div id="tool">
-      <template>
-        <el-popover placement="left-end" trigger="click">
+      <ClientOnly>
+        <el-popover placement="left-end">
           <p style="text-align: center">微信赞赏码</p>
           <img
             src="../../public/img/home/moneycode.png"
@@ -35,7 +35,7 @@
             </div>
           </template>
         </el-popover>
-      </template>
+      </ClientOnly>
     </div>
   </div>
 </template>
