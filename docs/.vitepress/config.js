@@ -1,3 +1,4 @@
+import mdItCustomAttrs from 'markdown-it-custom-attrs'
 import navConfigs from "./AutoNav"
 import sidebarConfig from "./AutoSidebar"
 
@@ -7,10 +8,8 @@ module.exports = {
     base: '/blog/',
     lastUpdated: true,
     head: [
-        // add jquert and fancybox
-        ['script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js' }],
-        ['script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js' }],
-        ['link', { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css' }]
+        ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" }],
+        ["script", { src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" }]
     ],
     cleanUrls: true,
     themeConfig: {
@@ -34,6 +33,14 @@ module.exports = {
         docFooter: {
             prev: '上一篇',
             next: '下一篇'
+        }
+    },
+    markdown: {
+        config: (md) => {
+            // use more markdown-it plugins!
+            md.use(mdItCustomAttrs, 'image', {
+                'data-fancybox': "gallery"
+            })
         }
     }
 }

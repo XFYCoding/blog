@@ -4,7 +4,7 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
+<style setup>
 .el-backtop {
   right: 3% !important;
   bottom: 10% !important;

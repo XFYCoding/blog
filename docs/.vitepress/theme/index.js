@@ -14,7 +14,7 @@ export default {
     useCopyCode();
     return h(Theme.Layout, null, {
       "doc-top": () => h(ToolBar),
-      "doc-bottom": () => h(BackTop)
+      "doc-bottom": () => h(BackTop),
     });
   },
   enhanceApp: async ({ app, router, siteData }) => {
