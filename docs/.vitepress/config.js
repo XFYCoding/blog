@@ -15,6 +15,7 @@ module.exports = {
     themeConfig: {
         logo: '/img/home/Xfycoding.jpg',
         siteTitle: 'XfyCoding博客',
+        darkModeSwitchLabel: '切换日光/暗黑模式',
         // 配置顶部的文字(不配置则是英文)
         sidebarMenuLabel: '侧边栏目录',
         returnToTopLabel: '回到顶部',
@@ -33,14 +34,25 @@ module.exports = {
         docFooter: {
             prev: '上一篇',
             next: '下一篇'
-        }
+        },
+        // 自定义扩展: 文章元数据配置
+        articleMetadataConfig: {
+            author: 'xfycoding', // 文章全局默认作者名称
+            authorLink: '/', // 点击作者名时默认跳转的链接
+        },
     },
     markdown: {
+        lineNumbers: true,
         config: (md) => {
             // use more markdown-it plugins!
             md.use(mdItCustomAttrs, 'image', {
                 'data-fancybox': "gallery"
             })
+            md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
+                let htmlResult = slf.renderToken(tokens, idx, options);
+                if (tokens[idx].tag === 'h1') htmlResult += `\n<ClientOnly><ArticlesMetadata :article="$frontmatter" /></ClientOnly>`;
+                return htmlResult;
+            }
         }
     }
 }

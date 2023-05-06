@@ -5,12 +5,12 @@
         <el-popover placement="left-end">
           <p style="text-align: center">微信扫一扫</p>
           <img
-            src="../../public/img/home/qrcode.png"
+            src="../../../public/img/home/qrcode.png"
             style="width: 300px; margin-top: 10px"
           />
           <template #reference>
             <div>
-              <img src="../../public/img/icon/wx.png" class="toolcontext" />
+              <img src="../../../public/img/icon/wx.png" class="toolcontext" />
               <span class="tooltext">微信</span>
             </div>
           </template>
@@ -22,13 +22,13 @@
         <el-popover placement="left-end">
           <p style="text-align: center">微信赞赏码</p>
           <img
-            src="../../public/img/home/moneycode.png"
+            src="../../../public/img/home/moneycode.png"
             style="width: 300px; margin-top: 10px"
           />
           <template #reference>
             <div>
               <img
-                src="../../public/img/icon/red-heart.png"
+                src="../../../public/img/icon/red-heart.png"
                 class="toolcontext"
               />
               <span class="tooltext">赞赏</span>

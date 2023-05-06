@@ -2,24 +2,23 @@ import Theme from "vitepress/theme";
 import "./styles/index.css";
 import "element-plus/dist/index.css";
 import elementplus from "element-plus";
-import { h } from "vue";
-import ToolBar from "../components/ToolBar.vue";
-import BackTop from "../components/BackTop.vue";
+import Layout from './Layout.vue';
+import ArticlesMetadata from './components/ArticlesMetadata.vue';
 
-import { useCopyCode } from '../composables/copyCode';
 
 export default {
   ...Theme,
-  Layout() {
-    useCopyCode();
-    return h(Theme.Layout, null, {
-      "doc-top": () => h(ToolBar),
-      "doc-bottom": () => h(BackTop),
-    });
-  },
+  // Layout() {
+  //   useCopyCode();
+  //   return h(Theme.Layout, null, {
+  //     "doc-top": () => h(ToolBar),
+  //     "doc-bottom": () => h(BackTop),
+  //   });
+  // },
+  Layout: Layout,
   enhanceApp: async ({ app, router, siteData }) => {
-    // router.mode = "hash";
     app.use(elementplus);
+    app.component('ArticlesMetadata',ArticlesMetadata);
   },
 };
 
