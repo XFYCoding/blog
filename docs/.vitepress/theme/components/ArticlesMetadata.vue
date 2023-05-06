@@ -82,7 +82,7 @@
       </span>
     </div>
 
-    <div class="meta-item tag" v-if="readTime != []">
+    <div class="meta-item tag" v-if="readTime.length != 0">
       <span class="meta-icon tag">
         <svg
           role="img"
