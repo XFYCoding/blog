@@ -117,13 +117,7 @@
 <script lang="ts" setup>
 import { reactive, toRefs, onMounted } from "vue";
 import { useData } from "vitepress";
-import dayjs from "dayjs";
-import "dayjs/locale/zh-cn";
-import relativeTime from "dayjs/plugin/relativeTime";
 import { goToLink } from "../utils.js";
-
-dayjs.extend(relativeTime);
-dayjs.locale("zh-cn");
 
 // 定义文章属性
 const props = defineProps({
