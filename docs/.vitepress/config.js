@@ -1,6 +1,7 @@
 import mdItCustomAttrs from 'markdown-it-custom-attrs'
 import navConfigs from "./AutoNav"
 import sidebarConfig from "./AutoSidebar"
+import articleDatas from "./ArticleData"
 
 module.exports = {
     title: "XfyCoding博客",
@@ -35,11 +36,14 @@ module.exports = {
             prev: '上一篇',
             next: '下一篇'
         },
-        // 自定义扩展: 文章元数据配置
+        // 自定义扩展区 
+        //文章元数据配置
         articleMetadataConfig: {
             author: 'xfycoding', // 文章全局默认作者名称
             authorLink: '/', // 点击作者名时默认跳转的链接
         },
+        //文章数据
+        articleDatas:articleDatas
     },
     markdown: {
         lineNumbers: true,

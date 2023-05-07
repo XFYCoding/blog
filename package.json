@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "element-plus": "^2.3.3",
+    "gray-matter": "^4.0.3",
     "markdown-it-custom-attrs": "^1.0.2"
   }
 }

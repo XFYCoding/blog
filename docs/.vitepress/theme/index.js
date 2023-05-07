@@ -4,7 +4,7 @@ import "element-plus/dist/index.css";
 import elementplus from "element-plus";
 import Layout from './Layout.vue';
 import ArticlesMetadata from './components/ArticlesMetadata.vue';
-
+import WorldCloud from "./components/WorldCloud.vue";
 
 export default {
   ...Theme,
@@ -19,6 +19,7 @@ export default {
   enhanceApp: async ({ app, router, siteData }) => {
     app.use(elementplus);
     app.component('ArticlesMetadata',ArticlesMetadata);
+    app.component('WorldCloud',WorldCloud);
   },
 };
 
