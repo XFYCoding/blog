@@ -343,7 +343,6 @@ function initTags(articleData) {
 // 点击指定Tag后进行选中
 let selectTag = ref("");
 const toggleTag = (tagTitle: string) => {
-  console.log(tagTitle);
   if (selectTag.value && selectTag.value == tagTitle) {
     selectTag.value = null;
   } else {
