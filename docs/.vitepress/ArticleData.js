@@ -35,6 +35,7 @@ function getAllArticleFiles(docsPath, files = []) {
 const articleDatas = articleFiles.map(articleFile => {
   const articleContent = fs.readFileSync(articleFile, 'utf-8');
   const { data } = parseFrontmatter(articleContent);
+  console.log(articleFile.substring(articleFile.lastIndexOf('docs') + 4).replace(/\.md$/, ''));
   return {
     ...data,
     path: articleFile.substring(articleFile.lastIndexOf('\\docs\\') + 5).replace(/\.md$/, ''),
