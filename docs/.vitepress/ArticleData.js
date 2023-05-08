@@ -37,7 +37,7 @@ const articleDatas = articleFiles.map(articleFile => {
   const { data } = parseFrontmatter(articleContent);
   return {
     ...data,
-    path: articleFile.substring(articleFile.lastIndexOf('\\docs\\') + 6).replace(/\.md$/, ''),
+    path: articleFile.substring(articleFile.lastIndexOf('\\docs\\') + 5).replace(/\.md$/, ''),
   }
 })
 

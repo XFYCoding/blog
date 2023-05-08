@@ -1,13 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 
+const excludedDirs = ['1-我的标签@'];
+
 const docsPath = path.resolve(__dirname, "../articles");
 
 const sidebarConfig = generateSidebarConfig(docsPath, "/articles");
 
 function generateSidebarConfig(docsPath, link,sidebarConfig = {}) {
     const files = fs.readdirSync(docsPath);
-
     if (link.endsWith("@")) {
         sidebarConfig[link] = generateSidebarDatas(docsPath, link);
         return;
