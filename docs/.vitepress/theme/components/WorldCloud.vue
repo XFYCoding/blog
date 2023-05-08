@@ -182,6 +182,7 @@ button {
   font-size: 15px;
   font-family: "微软雅黑";
   font-weight: bold;
+  cursor: pointer;
 }
 .wordCloud__tag :hover {
   color: red;
