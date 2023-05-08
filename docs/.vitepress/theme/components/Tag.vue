@@ -315,7 +315,7 @@ const tags = computed(() => initTags(theme.value.articleDatas));
 const tagTypes = ["", "success", "info", "warning", "danger"];
 
 function randomTagType() {
-  return this.tagTypes[Math.floor(Math.random() * this.tagTypes.length)];
+  return tagTypes[Math.floor(Math.random() * tagTypes.length)];
 }
 /**
  * 初始化标签数据
