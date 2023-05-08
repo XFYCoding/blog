@@ -58,3 +58,12 @@
 .vp-doc h2 {
     margin: 24px 0 16px !important;
 }
+
+:root {
+    --vp-z-index-local-nav: 200 !important;
+    --vp-z-index-nav: 300 !important;
+    --vp-z-index-layout-top: 400 !important;
+    --vp-z-index-backdrop: 500 !important;
+    --vp-z-index-sidebar: 600 !important;
+    --vp-z-index-footer: 700 !important;
+}

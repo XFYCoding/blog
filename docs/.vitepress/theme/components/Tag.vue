@@ -25,13 +25,18 @@
     <!-- 内容 -->
     <div>
       <el-row :gutter="24">
+        <!-- 区域 -->
+        <el-col :span="24">
+          <WorldCloud :data="dataList" :toggleTag = "toggleTag" />
+        </el-col>
+
         <!-- 标签列表区域 -->
         <el-col :span="24">
           <el-card :style="{ width: '100%', marginBottom: '20px' }">
             <el-tag
-              :type="randomTagType()"
               @click="toggleTag(tagTitle)"
-              v-for="(tag, tagTitle) in tags"
+              v-for="(tag, tagTitle, index) in tags"
+              :type="tagTypes[index]"
               :class="
                 selectTag === tagTitle
                   ? 'tag-checkable-checked tag-item'
@@ -61,13 +66,7 @@
                   <h3 class="result-item-title">
                     <a
                       href="javascript:void(0)"
-                      @click="
-                        goToLink(
-                          '/blog'+ scope.row.path,
-                          null,
-                          null
-                        )
-                      "
+                      @click="goToLink('/blog' + scope.row.path, null, null)"
                       class="title"
                       >{{ scope.row.title }}</a
                     >
@@ -306,17 +305,16 @@
 
 <script lang="ts" setup>
 import { computed, ref } from "vue";
-import { getQueryParam,goToLink } from "../utils";
+import { getQueryParam, goToLink } from "../utils";
 import { useData } from "vitepress";
+import WorldCloud from "./WorldCloud.vue";
 
 const { theme } = useData();
 
+const types = ["", "success", "info", "warning", "danger"];
+const tagTypes = [];
 const tags = computed(() => initTags(theme.value.articleDatas));
-const tagTypes = ["", "success", "info", "warning", "danger"];
 
-function randomTagType() {
-  return tagTypes[Math.floor(Math.random() * tagTypes.length)];
-}
 /**
  * 初始化标签数据
  * {tagTitle1: [article1, article2, ...}
@@ -332,18 +330,20 @@ function initTags(articleData) {
           tags[articleTag] = [];
         }
         tags[articleTag].push(article);
+        tagTypes.push(types[Math.floor(Math.random() * types.length)]);
+
         // 文章按发布时间降序排序
         tags[articleTag].sort((a, b) => b.date.localeCompare(a.date));
       });
     }
   }
-
   return tags;
 }
 
 // 点击指定Tag后进行选中
 let selectTag = ref("");
 const toggleTag = (tagTitle: string) => {
+  console.log(tagTitle);
   if (selectTag.value && selectTag.value == tagTitle) {
     selectTag.value = null;
   } else {
@@ -355,6 +355,22 @@ const toggleTag = (tagTitle: string) => {
 let tag = getQueryParam("tag");
 if (tag && tag.trim() != "") {
   toggleTag(tag);
+}
+
+const dataList = computed(() => initWordCloud(tags));
+/**
+ * 初始化词云数据
+ * [{"name": xx, "value": xx}]
+ */
+function initWordCloud(tags) {
+  const dataList = [];
+  for (let tag in tags.value) {
+    dataList.push({
+      name: tag,
+      value: tags.value[tag].length
+    });
+  }
+  return dataList;
 }
 </script>
 

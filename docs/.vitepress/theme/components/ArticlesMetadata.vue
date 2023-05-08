@@ -103,7 +103,7 @@
         >
           <el-tag
             class="ml-2"
-            @click="goToLink('/blog/articles/7-关于/1-文章分类@/1-文章库/1-标签库', 'tag', tag)"
+            @click="goToLink('/blog/articles/7-关于/1-文章索引@/1-文章库/1-标签库', 'tag', tag)"
             effect="dark"
             :title="tag"
             >{{ tag }}</el-tag
@@ -123,8 +123,6 @@ import { goToLink } from "../utils.js";
 const props = defineProps({
   article: Object,
 });
-
-console.log(props);
 
 // 初始化文章元数据信息
 const { theme, page, frontmatter } = useData();
