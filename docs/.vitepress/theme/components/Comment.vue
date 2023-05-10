@@ -14,7 +14,7 @@ export default {
   },
   mounted() {
     const commentConfig = {
-      proxy: 'https://proxy',
+      proxy: 'https://cors-server-ecru.vercel.app/github_access_token',
       clientID: "2253aa8e8a7f5145d59c",
       clientSecret: "22b7d4536da5132aa76287039e224f2dfc7580c0",
       repo: "blog-comments",
