@@ -1,7 +1,9 @@
 <template>
-  <div class="gitalk-container">
-    <div id="gitalk-container"></div>
-  </div>
+  <ClientOnly>
+    <div class="gitalk-container">
+      <div id="gitalk-container"></div>
+    </div>
+  </ClientOnly>
 </template>
 <script>
 import md5 from "md5";
@@ -14,7 +16,7 @@ export default {
   },
   mounted() {
     const commentConfig = {
-      proxy: 'https://vercel.prohibitorum.top/github_access_token',
+      proxy: "https://vercel.prohibitorum.top/github_access_token",
       clientID: "2253aa8e8a7f5145d59c",
       clientSecret: "22b7d4536da5132aa76287039e224f2dfc7580c0",
       repo: "blog-comments",
@@ -29,8 +31,8 @@ export default {
 };
 </script>
 <style>
-.gitalk-container{
-    margin-top: 30px;
+.gitalk-container {
+  margin-top: 30px;
 }
 .gt-container .gt-header-textarea {
   color: #000;

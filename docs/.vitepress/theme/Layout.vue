@@ -4,9 +4,7 @@
       <ToolBar />
     </template>
     <template #doc-after>
-      <ClientOnly>
-        <Comment />
-      </ClientOnly>
+      <Comment />
     </template>
     <template #doc-bottom>
       <BackTop />
