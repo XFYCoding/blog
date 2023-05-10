@@ -51,7 +51,7 @@ module.exports = {
         options: {
           appId: "W7HIZ0H7U9",
           apiKey: "61b0dc53487ccf6a2057bfd32dc11f96",
-          indexName: "xfycoding",
+          indexName: "xfycodingblog",
           locales: {
             zh: {
               placeholder: "搜索文档",
