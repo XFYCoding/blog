@@ -15,11 +15,11 @@ export default {
   mounted() {
     const commentConfig = {
       clientID: "2253aa8e8a7f5145d59c",
-      clientSecret: "1bf108cfa63e82a5bdd03c9b7fbc711628a9e1e3",
-      repo: "blog",
+      clientSecret: "22b7d4536da5132aa76287039e224f2dfc7580c0",
+      repo: "blog-comments",
       owner: "xfycoding",
       admin: ["xfycoding"],
-      id: md5(location.pathname),
+      id: location.pathname,
       distractionFreeMode: false,
     };
     const gitalk = new Gitalk(commentConfig);
