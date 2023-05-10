@@ -3,6 +3,9 @@
     <template #doc-top>
       <ToolBar />
     </template>
+     <template #doc-after>
+      <Comment />
+    </template>
     <template #doc-bottom>
       <BackTop />
     </template>
@@ -13,6 +16,7 @@
 import DefaultTheme from "vitepress/theme";
 import ToolBar from "./components/ToolBar.vue";
 import BackTop from "./components/BackTop.vue";
+import Comment from "./components/Comment.vue";
 import { useCopyCode } from "./composables/copyCode";
 
 const { Layout } = DefaultTheme;
