@@ -19,7 +19,7 @@ export default {
       repo: "blog-comments",
       owner: "xfycoding",
       admin: ["xfycoding"],
-      id: location.pathname,
+      id: md5(location.pathname),
       distractionFreeMode: false,
     };
     const gitalk = new Gitalk(commentConfig);
