@@ -3,8 +3,10 @@
     <template #doc-top>
       <ToolBar />
     </template>
-     <template #doc-after>
-      <Comment />
+    <template #doc-after>
+      <ClientOnly>
+        <Comment />
+      </ClientOnly>
     </template>
     <template #doc-bottom>
       <BackTop />
