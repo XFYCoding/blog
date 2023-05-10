@@ -4,13 +4,13 @@
   </div>
 </template>
 <script>
-import md5 from "md5"
-import Gitalk from "gitalk"
-import "gitalk/dist/gitalk.css"
+import md5 from "md5";
+import Gitalk from "gitalk";
+import "gitalk/dist/gitalk.css";
 export default {
   name: "git-talk",
   data() {
-    return {}
+    return {};
   },
   mounted() {
     const commentConfig = {
@@ -21,15 +21,17 @@ export default {
       admin: ["xfycoding"],
       id: md5(location.pathname),
       distractionFreeMode: false,
-    }
-    const gitalk = new Gitalk(commentConfig)
-    gitalk.render("gitalk-container")
+    };
+    const gitalk = new Gitalk(commentConfig);
+    gitalk.render("gitalk-container");
   },
-}
+};
 </script>
 <style>
+.gitalk-container{
+    margin-top: 30px;
+}
 .gt-container .gt-header-textarea {
-    margin-top: 10px;
   color: #000;
 }
 </style>
