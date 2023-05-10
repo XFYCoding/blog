@@ -45,7 +45,7 @@ module.exports = {
       prev: "上一篇",
       next: "下一篇",
     },
-    //algolia搜索
+    //algolia搜索配置
     search: {
         provider: "algolia",
         options: {
