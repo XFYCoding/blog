@@ -333,7 +333,7 @@ function initTags(articleData) {
         tagTypes.push(types[Math.floor(Math.random() * types.length)]);
 
         // 文章按发布时间降序排序
-        tags[articleTag].sort((a, b) => b.date.localeCompare(a.date));
+        tags[articleTag].sort((a, b) => b.startDate.localeCompare(a.startDate));
       });
     }
   }
@@ -489,5 +489,9 @@ svg:not(:root) {
 .meta-content a {
   font-size: 14px;
   color: var(--vp-c-text-2);
+}
+
+.el-table tr {
+    background-color: var(--el-table-tr-bg-color) !important;
 }
 </style>

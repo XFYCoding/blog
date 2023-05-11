@@ -58,7 +58,9 @@
         </svg>
       </span>
       <span class="meta-content">
-        <span :title="startDate">{{ startDate }}</span>
+         <a href="javascript:void(0)" @click="goToLink('/blog/articles/7-关于/1-文章索引@/1-文章库/2-时间轴', 'year', new Date(startDate).getFullYear())" :title="startDate">{{
+          startDate
+        }}</a>
       </span>
     </div>
 

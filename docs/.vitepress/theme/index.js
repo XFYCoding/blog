@@ -5,6 +5,7 @@ import elementplus from "element-plus";
 import Layout from './Layout.vue';
 import ArticlesMetadata from './components/ArticlesMetadata.vue';
 import Tag from "./components/Tag.vue";
+import Archive from "./components/Archive.vue";
 
 export default {
   ...Theme,
@@ -20,6 +21,7 @@ export default {
     app.use(elementplus);
     app.component('ArticlesMetadata',ArticlesMetadata);
     app.component('Tag',Tag);
+    app.component('Archive',Archive);
   },
 };
 

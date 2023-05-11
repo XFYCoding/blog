@@ -40,6 +40,8 @@ const articleDatas = articleFiles.map(articleFile => {
     ...data,
     path: articleFile.substring(articleFile.lastIndexOf('docs') + 4).replace(/\.md$/, ''),
   }
-})
+}).filter((item) => {
+  return item.startDate !== undefined;
+});
 
 export default articleDatas;
