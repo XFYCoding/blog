@@ -373,12 +373,12 @@ function initWordCloud(tags) {
 }
 </script>
 
-<style>
+<style scoped>
 .vp-doc table {
-  margin: 0;
+  margin: 0 !important;
 }
 .vp-doc h3 {
-  margin: 0;
+  margin: 0 !important;
 }
 
 /** ---------------自定义样式--------------- */
@@ -479,12 +479,12 @@ svg:not(:root) {
 }
 
 .vp-doc a {
-  font-weight: 400;
-  font-size: 14px;
-  color: var(--vp-c-text-1);
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: var(--vp-c-text-1) !important;
 }
 .vp-doc a:hover {
-  color: var(--vp-c-brand);
+  color: var(--vp-c-brand) !important;
 }
 .meta-content a {
   font-size: 14px;
