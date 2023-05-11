@@ -1,9 +1,7 @@
 <template>
-  <ClientOnly>
     <div class="gitalk-container">
       <div id="gitalk-container"></div>
     </div>
-  </ClientOnly>
 </template>
 <script>
 import md5 from "md5";
