@@ -28,7 +28,7 @@
             )
           "
           :src="
-            '/img/svg/animals/' +
+            '/blog/img/svg/animals/' +
             getChineseZodiac(year.replace('年', '')) +
             '.svg'
           "
